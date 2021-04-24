@@ -34,7 +34,6 @@ public class ProductServiceImpl implements ProductService {
 	@Override
 	public List<Product> listAllProducts() {
 		logger.debug("listAllProducts called");
-		Query query = new Query();
 		return productRepository.findAll();
 	}
 

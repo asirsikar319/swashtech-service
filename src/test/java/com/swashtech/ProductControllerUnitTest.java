@@ -1,13 +1,10 @@
 package com.swashtech;
 
 import static org.junit.Assert.assertTrue;
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyString;
 
-import java.util.Map;
-import java.util.Set;
+import java.util.ArrayList;
 
-import org.bson.BSONObject;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -19,7 +16,6 @@ import com.mongodb.DBObject;
 import com.swashtech.controller.ProductController;
 import com.swashtech.product.domain.Product;
 import com.swashtech.repositories.ProductRepository;
-import com.swashtech.services.ProductService;
 import com.swashtech.services.ProductServiceImpl;
 
 public class ProductControllerUnitTest {
@@ -47,8 +43,7 @@ public class ProductControllerUnitTest {
 
 	@Test
 	public void list() {
-		Mockito.when(mongo.count(new Query(), Product.class)).thenReturn(new Long(10));
-		Mockito.when(mongo.aggregate(null, "product", Product.class).getRawResults()).thenReturn((DBObject) new Object());
+		Mockito.when(productService.listAllProducts()).thenReturn(new ArrayList<Product>());
 		productController.list();
 		assertTrue(true);
 	}
