@@ -10,9 +10,7 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.data.mongodb.core.MongoOperations;
-import org.springframework.data.mongodb.core.query.Query;
 
-import com.mongodb.DBObject;
 import com.swashtech.controller.ProductController;
 import com.swashtech.product.domain.Product;
 import com.swashtech.repositories.ProductRepository;

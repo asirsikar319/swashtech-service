@@ -1,10 +1,7 @@
 package com.swashtech;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
-import java.io.IOException;
-
-import org.json.JSONException;
 import org.junit.Before;
 import org.junit.Test;
 

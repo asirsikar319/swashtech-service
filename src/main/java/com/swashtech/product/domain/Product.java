@@ -2,8 +2,6 @@ package com.swashtech.product.domain;
 
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.*;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
