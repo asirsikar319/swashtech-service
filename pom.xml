@@ -33,10 +33,6 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-rest</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
@@ -95,7 +91,7 @@
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<version>1.0.0</version>
+				<version>1.2.2</version>
 				<configuration>
 					<imageName>asirsikar319/swashtech-service</imageName>
 					<dockerDirectory>src/main/docker</dockerDirectory>
@@ -146,6 +142,15 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>**/application.properties</exclude>
+				</excludes>
+			</resource>
+		</resources>
 	</build>
 
 
