@@ -53,3 +53,22 @@ spec:
       maxSurge: 25%
   revisionHistoryLimit: 10
   progressDeadlineSeconds: 600
+  
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: swashtech-service
+  namespace: swashtech
+  labels:
+    run: swashtech-service
+spec:
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30697
+  selector:
+    run: swashtech-service
+  type: NodePort
