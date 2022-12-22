@@ -24,43 +24,38 @@ public class ProductServiceImpl implements ProductService {
 	public void setProductRepository(ProductRepository productRepository) {
 		this.productRepository = productRepository;
 	}
-	
+
 	private MongoOperations mongo;
-	
+
 	public void setMongo(MongoOperations mongo) {
 		this.mongo = mongo;
 	}
 
 	@Override
 	public List<Product> listAllProducts() {
-		logger.debug("listAllProducts called");
 		return productRepository.findAll();
 	}
 
 	@Override
 	public Product findByProductId(String productId) {
-		logger.debug("getProductById called");
 		Product dBProduct = productRepository.findByproductId(productId);
 		return dBProduct;
 	}
 
 	@Override
 	public Product saveProduct(Product product) {
-		logger.debug("saveProduct called");
 		Product dBProduct = productRepository.insert(product);
 		return dBProduct;
 	}
 
 	@Override
 	public void deleteProduct(String productId) {
-		logger.debug("deleteProduct called");
 		Product dBProduct = productRepository.findByproductId(productId);
 		productRepository.delete(dBProduct);
 	}
 
 	@Override
 	public Product updateProduct(Product product) {
-		logger.debug("saveProduct called");
 		Product dBProduct = productRepository.save(product);
 		return dBProduct;
 	}
